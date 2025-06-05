@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tool Anh Đức</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #00ffcc;
+      margin-bottom: 30px;
+    }
+
+    .box {
+      background: #1e1e1e;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 0 15px #00ffcc44;
+    }
+
+    .toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    label {
+      font-size: 18px;
+    }
+
+    input[type="checkbox"] {
+      width: 50px;
+      height: 24px;
+      appearance: none;
+      background: #444;
+      border-radius: 20px;
+      position: relative;
+      outline: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    input:checked {
+      background: #00ffcc;
+    }
+
+    input::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: white;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.3s;
+    }
+
+    input:checked::before {
+      transform: translateX(26px);
+    }
+
+    #status {
+      margin-top: 20px;
+      height: 24px;
+      font-size: 16px;
+      color: #00ffcc;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>TOOL ANH ĐỨC</h1>
+  <div class="box">
+    <div class="toggle">
+      <label>Aimbot</label>
+      <input type="checkbox" onchange="showStatus('Aimbot')">
+    </div>
+    <div class="toggle">
+      <label>aimlock</label>
+      <input type="checkbox" onchange="showStatus('ESP Hack')">
+    </div>
+    <div class="toggle">
+      <label>sensi</label>
+      <input type="checkbox" onchange="showStatus('FPS Boost')">
+    </div>
+    <div class="toggle">
+      <label> tăng nhạy</label>
+      <input type="checkbox" onchange="showStatus('Chống Lag')">
+    </div>
+    <div class="toggle">
+      <label>giảm lố đầu</label>
+      <input type="checkbox" onchange="showStatus('Tăng Độ Nhạy')">
+    </div>
+  </div>
+
+  <div id="status"></div>
+
+  <div class="footer">
+    © Tool by Anh Đức - Phiên bản Web UI
+  </div>
+
+  <script>
+    function showStatus(name) {
+      const status = document.getElementById("status");
+      status.textContent = `${name} đã được bật ✅`;
+      setTimeout(() => status.textContent = "", 2500);
+    }
+  </script>
+</body>
+</html>
